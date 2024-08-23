@@ -1,0 +1,178 @@
+@font-face {
+  font-family: 'myfont';
+  src: url('../fonts/VINERITC.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 3fr 12fr;
+  overflow: hidden; /* Evita el scroll general en el body */
+}
+
+/* ******************************** aside ********************************  */
+/* Ocultar la barra de scroll */
+.aside::-webkit-scrollbar {
+  width: 0; /* Oculta la barra en navegadores basados en WebKit */
+}
+
+.aside {
+  scrollbar-width: none; /* Oculta la barra en Firefox */
+}
+
+.aside {
+  background-color: #440719;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.aside img {
+  width: 50%;
+  margin: 2rem auto;
+}
+
+.aside a {
+  color: #e7ddd9;
+  padding: 1rem;
+}
+
+.aside a:hover {
+  background-color: #6b1e35;
+}
+
+/* ******************************** main ********************************  */
+.main {
+  padding: 2rem;
+  overflow-y: auto; /* Scroll independiente en el main */
+  height: 100vh; /* Asegura que el main ocupe todo el alto */
+}
+
+/* ******************************** table ********************************  */
+table td,
+table th {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+table tr {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+/* ******************************** general ********************************  */
+.m-0 {
+  margin: 0 !important;
+}
+.w-1-2 {
+  width: 50%;
+}
+.center {
+  text-align: center;
+}
+.hidden {
+  display: none;
+}
+.invisible {
+  visibility: hidden;
+}
+.selected {
+  background-color: #6b1e35;
+}
+.search {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 2rem;
+}
+.dashboard-main {
+  padding: 0;
+}
+.dashboard {
+  background-image: url('../img/wallpaper.jpg');
+  background-size: cover;
+  background-attachment: local;
+  background-position: center top;
+  background-repeat: no-repeat;
+  width: 100%;
+  padding: 25rem 9rem 0;
+  height: 1500px;
+}
+.dashboard p {
+  font-family: 'myfont', sans-serif;
+  font-size: 1.3rem;
+}
+
+@media only screen and (max-width: 768px) {
+  html,
+  body {
+    height: auto;
+    overflow: auto;
+  }
+  table tr {
+    margin-bottom: 1rem;
+  }
+  table td,
+  table th {
+    justify-content: start;
+    border: 0.5px solid lightgray;
+  }
+  body {
+    grid-template-columns: 1fr;
+  }
+  .aside {
+    padding: 2rem;
+    height: auto;
+  }
+  .aside img {
+    width: 80px;
+    margin: 1rem auto;
+  }
+  .aside a {
+    padding: 1rem;
+  }
+  .main {
+    height: auto;
+    overflow: auto;
+  }
+  table {
+    border-collapse: collapse;
+  }
+  table tr {
+    grid-template-columns: 1fr;
+  }
+  tr {
+    border-bottom: 1px solid lightgray;
+  }
+  .dashboard-main {
+    padding: 0;
+  }
+  .dashboard {
+    background-image: url('../img/wallpaper.jpg');
+    background-size: cover;
+    background-attachment: local;
+    background-position: center top;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding: 9rem 3rem 0;
+    height: 500px;
+  }
+  .dashboard p {
+    font-family: 'myfont', sans-serif;
+    font-size: .5rem;
+  }
+}
